@@ -22,32 +22,35 @@ module.exports = function(options) {
     sassLoaders = extractForProduction(sassLoaders);
     scssLoaders = extractForProduction(scssLoaders);
     lessLoaders = extractForProduction(lessLoaders);
+
+  }
+  else {
+    // start server
+    apiServer({PORT: 9001});
   }
 
   var jsLoaders = ['babel'];
 
-  apiServer( {PORT: 8081 } );
-
   return {
     entry: options.production ? './app/index.jsx' : [
-      'webpack-dev-server/client?http://localhost:8080',
+      'webpack-dev-server/client?http://localhost:9000',
       'webpack/hot/only-dev-server',
       './app/index.jsx'
     ],
     devServer: {
       hot: true,
       host: 'localhost',
-      port: 8080,
+      port: 9000,
       historyApiFallback: true,
       proxy: {
-        '/api/*': 'http://localhost:8081',
+        '/api/*': 'http://localhost:9001',
       }
     },
     debug: !options.production,
     devtool: options.devtool,
     output: {
       path: options.production ? './dist' : './build',
-      publicPath: options.production ? '' : 'http://localhost:8080/',
+      publicPath: options.production ? '' : 'http://localhost:9000/',
       filename: options.production ? 'app.[hash].js' : 'app.js'
     },
     module: {
