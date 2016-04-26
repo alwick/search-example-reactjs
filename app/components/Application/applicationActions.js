@@ -8,12 +8,12 @@ export function onSearch( criteria ) {
     return (dispatch) => {
         dispatch(searching());
 
-        superagent.get('api/search').query({criteria: criteria}).end((err, res) => {
+        return superagent.get('api/search').query({criteria: criteria}).end((err, res) => {
             if(!err) {
                 dispatch(searchSuccess(res.body));
             }
             else {
-                dispatch(searchFailed("Could not perform search", res));
+                dispatch(searchFailed('Could not perform search', res));
             }
         });
     };
@@ -34,7 +34,7 @@ function searchSuccess(body) {
 
 function searchFailed(reason, result) {
     return {
-        type: GET_EMPLOYEES_FAIL,
+        type: SEARCHING_FAIL,
         reason: reason,
         error: result
     };

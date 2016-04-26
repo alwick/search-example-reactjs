@@ -4,6 +4,7 @@ import {SEARCHING,SEARCH_SUCCESS,SEARCHING_FAIL} from './applicationActions';
 function results(state = [], action = null) {
     switch(action.type) {
         case SEARCHING:
+        case SEARCHING_FAIL:
             return [];
         case SEARCH_SUCCESS:
             return action.results;

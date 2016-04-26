@@ -13,6 +13,6 @@ describe('Header', function() {
     const title = ReactTestUtils.findRenderedDOMComponentWithClass(header, styles.title);
     const dom = ReactDOM.findDOMNode(title);
 
-    expect(dom.textContent).to.equal('Table Sorting Example');
+    expect(dom.textContent).to.equal('Search Example');
   });
 });

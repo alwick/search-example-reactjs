@@ -23,9 +23,9 @@ are returned to the web client to be shown to the user.
 * [Babel](https://babeljs.io/) for ES6+ transpilation.
 * [SASS](http://sass-lang.com/) (SCSS or Sass style), [Less](http://lesscss.org/), and [Autoprefixer](https://github.com/postcss/autoprefixer) enabled by default through Webpack.
 * Image loaders setup and ready to go so you can reference your images as `require()` statements in JS, or just use `url()` as usual in CSS and Webpack will take care of the rest. See the [Header](https://github.com/bradleyboy/yarsk/blob/master/app/components/Header/index.jsx#L9-L18) component and the [Application component stylesheet](https://github.com/bradleyboy/yarsk/blob/master/app/components/Application/style.sass#L2) for examples of each.
-* [Karma](http://karma-runner.github.io/0.12/index.html) + [Mocha](http://mochajs.org/) for testing. [Istanbul](https://gotwarlost.github.io/istanbul/) and [isparta](https://github.com/douglasduteil/isparta) are also activated with `karma-coverage` for code coverage analysis, even on your ES6 classes. See [Testing](https://github.com/bradleyboy/yarsk#tests) below for more info.
-* Production configuration with best practices applied for optimizing React file size. The bundled JS file produced from this example is right at 40KB minified and gzipped. See [Building](https://github.com/bradleyboy/yarsk#building) below for more info.
-* Built-in command for publishing your app to GitHub pages. See [Building](https://github.com/bradleyboy/yarsk#building) below for more info.
+* [Karma](http://karma-runner.github.io/0.12/index.html) + [Mocha](http://mochajs.org/) for testing. [Istanbul](https://gotwarlost.github.io/istanbul/) and [isparta](https://github.com/douglasduteil/isparta) are also activated with `karma-coverage` for code coverage analysis, even on your ES6 classes. See [Testing](https://github.com/alwick/search-example-reactjs#tests) below for more info.
+* Production configuration with best practices applied for optimizing React file size. The bundled JS file produced from this example is right at 40KB minified and gzipped. See [Building](https://github.com/alwick/search-example-reactjs#building) below for more info.
+* Built-in command for publishing your app to GitHub pages. See [Building](https://github.com/alwick/search-example-reactjs#building) below for more info.
 * [Optional support for ESLint via babel-eslint](https://github.com/bradleyboy/yarsk#linting).
 
 ## Usage
@@ -53,7 +53,7 @@ You can also automatically publish to GitHub pages. Just run this instead of the
 npm run build:gh
 ```
 
-You can then view your app at `http://[yourgithubusername].github.io/[reponame]`. For example, you can load this demo at http://bradleyboy.github.io/yarsk.
+You can then view your app at `http://[yourgithubusername].github.io/[reponame]`. For example, you can load this demo at http://alwick.github.io/search-example-reactjs.
 
 ## Modifying the HTML
 
