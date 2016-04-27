@@ -1,4 +1,5 @@
 # ReactJS Search Example
+[![Build Status](https://travis-ci.org/alwick/search-example-reactjs)](https://travis-ci.org/alwick/search-example-reactjs)
 
 ## Overview
 
