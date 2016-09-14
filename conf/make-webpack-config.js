@@ -32,10 +32,10 @@ module.exports = function(options) {
   var jsLoaders = ['babel'];
 
   return {
-    entry: options.production ? './app/index.jsx' : [
+    entry: options.production ? './src/client/index.jsx' : [
       'webpack-dev-server/client?http://localhost:9000',
       'webpack/hot/only-dev-server',
-      './app/index.jsx'
+      './src/client/index.jsx'
     ],
     devServer: {
       hot: true,

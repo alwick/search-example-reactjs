@@ -1,6 +1,6 @@
 var express = require( "express" );
 var serveStatic = require( "serve-static" );
-var appRouter = require( "../server/api" );
+var appRouter = require( "../src/server/api" );
 
 module.exports = function(options) {
     const app = express();
