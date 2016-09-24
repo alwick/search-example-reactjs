@@ -1,13 +1,24 @@
-var express = require( "express" );
-var serveStatic = require( "serve-static" );
-var appRouter = require( "./api" );
+import config from 'config';
+import http from 'http';
+import app from './app';
 
-const app = express();
-const PORT = 8001;
+let httpListenerPort = 80;
 
-app.use(serveStatic(__dirname + "../dist"));
-appRouter(app);
+// Override default ports when running on windows or mac
+if (process.platform === 'darwin' || process.platform === 'win32') {
+    httpListenerPort = 8080;
 
-app.listen(PORT);
+    console.log('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
+    console.log('NODE_CONFIG_DIR: ' + config.util.getEnv('NODE_CONFIG_DIR'));
+}
 
-console.log( "Started API Server on port: " + PORT );
+var httpServer = http.createServer(app).listen(httpListenerPort, function () {
+    console.log('app is listening at localhost:' + httpListenerPort);
+});
+
+process.on('SIGTERM', () => {
+    httpServer.close(function () {
+        console.log('SIGTERM issued...app is shutting down');
+        process.exit(0);
+    });
+});
