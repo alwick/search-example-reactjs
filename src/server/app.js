@@ -3,7 +3,6 @@ import express from 'express';
 import compression from 'compression';
 import favicon from 'serve-favicon';
 import cacheResponseDirective from 'express-cache-response-directive';
-import memwatch from 'memwatch-next';
 import bodyParser from 'body-parser';
 import root from './routes/root';
 import api from './routes/api/index';
@@ -25,10 +24,6 @@ app.use(cacheResponseDirective());
 app.use((req, res, next) => {
     res.cacheControl('no-store');
     next();
-});
-
-memwatch.on('leak', (info) => {
-    console.log(info, 'Memory leak was detected');
 });
 
 // Logging incoming request
