@@ -25,7 +25,7 @@ export default class SearchCriteria extends React.Component {
                         <input ref="searchText" type="text" placeholder="Enter Search Text"/>
                     </Col>
                     <Col xs={6} md={4}>
-                        <Button onClick={()=>{this.search()}}>Go</Button>
+                        <Button name="go" onClick={()=>{this.search()}}>Go</Button>
                     </Col>
                 </Row>
             </Panel>
